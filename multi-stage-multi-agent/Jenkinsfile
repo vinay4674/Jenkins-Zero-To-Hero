@@ -7,6 +7,10 @@ pipeline {
       }
       steps {
         sh 'mvn --version'
+        // Example: Running the Java Hello World
+        sh 'echo "public class HelloWorld { public static void main(String[] args) { System.out.println(\"Hello, World!\"); } }" > HelloWorld.java'
+        sh 'javac HelloWorld.java'
+        sh 'java HelloWorld'
       }
     }
     stage('Front-end') {
